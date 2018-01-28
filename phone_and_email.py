@@ -27,10 +27,10 @@ email_regex = re.compile(r'''
 
 ''', re.VERBOSE)
 
-# TODO: Get the text off the clipboard
+# Get the text off the clipboard
 text = pyperclip.paste()
 
-# TODO: Extract the email/phone from this text
+# Extract the email/phone from this text
 extracted_phone = phone_regex.findall(text)
 extracted_email = email_regex.findall(text)
 
@@ -38,6 +38,6 @@ all_phone_numbers = []
 for phone_number in extracted_phone:
     all_phone_numbers.append(phone_number[0])
 
-print(all_phone_numbers)
-
-# TODO: Copy the extracted email/phone to the clipboard
+# Copy the extracted email/phone to the clipboard
+results = '\n'.join(all_phone_numbers) + '\n' + '\n'.join(extracted_email)
+pyperclip.copy(results)
