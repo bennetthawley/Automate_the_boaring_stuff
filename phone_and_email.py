@@ -17,7 +17,7 @@ phone_regex = re.compile(r'''
 )
 ''', re.VERBOSE)
 
-# TODO: Create a regex for email addresses
+# Create a regex for email addresses
 email_regex = re.compile(r'''
 # some.+_thing@(\d{2,5}))?.com
 
